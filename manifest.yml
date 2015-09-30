@@ -4,7 +4,9 @@ declared-services:
     label: twitterinsights
     plan: Free    
 applications:
-- name:       places-insights-lab
+- services:
+  - places-twitterinsights  
+  name:       places-insights-lab
   host:       places-insights-lab
   path:       .
   domain:     mybluemix.net
@@ -12,5 +14,3 @@ applications:
   memory:     256M
   command:    node app
   buildpack:  sdk-for-nodejs
-- services:
-  - places-twitterinsights
