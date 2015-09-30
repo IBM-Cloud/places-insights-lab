@@ -1,0 +1,31 @@
+@import url('//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css');
+@import 'places.css';
+@import 'weather.css';
+@import 'twitter.css';
+
+.navbar {
+  background-color: #55acee !important;
+}
+
+.navbar .navbar-brand {
+  color: #FFF;
+}
+
+.navbar-toggle .icon-bar {
+  background: #FFF;
+}
+
+.jumbotron {
+  padding-top: 48px !important;
+  background-color: #FFF;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+}
+
+.source-panel {
+  margin-bottom: 10px;
+}
+
+.source-panel .collapse {
+  margin-top: 10px;
+}

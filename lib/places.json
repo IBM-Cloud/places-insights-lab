@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Paris",
+    "type": "city",
+    "lat": 48.856614,
+    "lon": 2.3522219000000177,
+    "places": [
+      {
+        "name": "Tour Eiffel",
+        "type": "monument",
+        "lat": 48.85837,
+        "lon": 2.294481000000019
+      },
+      {
+        "name": "Notre-Dame de Paris",
+        "type": "monument",
+        "lat": 48.852968,
+        "lon": 2.349901999999929
+      }
+    ]
+  },
+  {
+    "name": "New York",
+    "type": "city",
+    "lat": 40.7127837,
+    "lon": -74.00594130000002,
+    "places": [
+      {
+        "name": "Empire State Building",
+        "type": "monument",
+        "lat": 40.7484404,
+        "lon": -73.98565539999998
+      },
+      {
+        "name": "Central Park",
+        "type": "monument",
+        "lat": 40.782865,
+        "lon": -73.96535499999999
+      }
+    ]
+  }
+]

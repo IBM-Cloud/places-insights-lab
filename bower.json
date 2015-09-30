@@ -1,0 +1,15 @@
+{
+  "name": "places-insights-lab",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "public/vendor"
+  ],
+  "dependencies": {
+    "angular": "~1.4.6",
+    "bootstrap": "~3.3.5",
+    "json-formatter": "~0.4.0",
+    "livestamp": "~1.1.2",
+    "moment": "~2.10.6"
+  }
+}

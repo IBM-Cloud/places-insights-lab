@@ -1,0 +1,139 @@
+<!--
+// Licensed under the Apache License. See footer for details.
+-->
+<h2>Tweets<span ng-if="data.selectedPlace.name"> about {{data.selectedPlace.name}}</span></h2>
+
+
+<div class="row">
+
+  <!-- First column shows all the tweets -->
+  <div class="col-md-6">
+    <div class="source-panel">
+      <button class="btn btn-warning btn-sm" type="button" data-toggle="collapse" data-target="#tweetsSource" aria-expanded="false" aria-controls="tweetsSource">View JSON source for Twitter data</button>
+      <div class="collapse" id="tweetsSource">
+        <json-formatter json="data.tweets" open="1"></json-formatter>
+      </div>
+    </div>
+    <div>
+      <ul class="list-group">
+        <a href="#" class="list-group-item" ng-repeat="tweet in data.tweets">
+          <div class="media tweet" ng-click="selectTweet(tweet)">
+            <div class="media-left">
+              <img class="tweet-image media-object" ng-src="{{tweet.message.actor.image}}" />
+            </div>
+            <div class="media-body">
+              <div>
+                <span class="tweet-displayName">{{tweet.message.actor.displayName}}</span>
+                <span class="tweet-handle text-muted">@{{tweet.message.actor.preferredUsername}}</span>
+                <i class="fa fa-{{tweet.cde.author.gender}}" ng-if="tweet.cde.author.gender != 'unknown'"></i>
+                <i class="fa fa-diamond" ng-if="tweet.cde.author.maritalStatus.isMarried == 'true'"></i>
+                <i class="fa fa-child" ng-if="tweet.cde.author.parenthood.isParent == 'true'"></i>
+                <i class="fa fa-check-circle" ng-if="tweet.message.actor.verified"></i>
+                <i class="fa fa-thumbs-up" ng-if="tweet.cde.content.sentiment.polarity == 'POSITIVE'"></i>
+                <i class="fa fa-thumbs-down" ng-if="tweet.cde.content.sentiment.polarity == 'NEGATIVE'"></i>
+                <span class="tweet-postedTime text-muted pull-right" data-livestamp="{{tweet.message.postedTime}}"></span>
+              </div>
+              <div class="tweet-body">{{tweet.message.body}}</div>
+            </div>
+          </div>
+        </a>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Second column shows the selected tweet -->
+  <div class="col-md-6">
+    <div class="source-panel">
+      <button class="btn btn-warning btn-sm" type="button" data-toggle="collapse" data-target="#selectedTweetSource" aria-expanded="false" aria-controls="selectedTweetSource">View JSON source for selected tweet</button>
+      <div class="collapse" id="selectedTweetSource">
+        <json-formatter json="data.selectedTweet" open="1"></json-formatter>
+      </div>
+    </div>
+
+    <div id="selected-tweet"></div>
+
+    <div>
+      <form class="form-horizontal">
+        <div class="form-group">
+          <label class="col-sm-4 control-label">Sentiment</label>
+          <div class="col-sm-8">
+            <span class="form-control" disabled data-toggle="tooltip" data-placement="bottom" title="{{data.selectedTweet.cde.content.sentiment.evidence}}">
+                        {{data.selectedTweet.cde.content.sentiment.polarity}}
+                        <i class="fa fa-thumbs-up" ng-if="data.selectedTweet.cde.content.sentiment.polarity == 'POSITIVE'"></i>
+                        <i class="fa fa-thumbs-down" ng-if="data.selectedTweet.cde.content.sentiment.polarity == 'NEGATIVE'"></i>
+                      </span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-sm-4 control-label">Location</label>
+          <div class="col-sm-8">
+            <span class="form-control" disabled>
+                        {{data.selectedTweet.cde.author.location.city}}
+                        {{data.selectedTweet.cde.author.location.state}}
+                        {{data.selectedTweet.cde.author.location.country}}
+                      </span>
+          </div>
+        </div>
+
+        <div ng-if="data.selectedTweet.cde.author.gender != 'unknown'">
+          <div class="form-group">
+            <label class="col-sm-4 control-label">Gender</label>
+            <div class="col-sm-8">
+              <span class="form-control" disabled>
+                          {{data.selectedTweet.cde.author.gender}}
+                          <i class="fa fa-{{data.selectedTweet.cde.author.gender}}"></i>
+                      </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" ng-true-value="'true'" ng-false-value="'false'" disabled ng-model="data.selectedTweet.cde.author.maritalStatus.isMarried"> Author is married
+                <div class="form-group">
+                  <label class="col-sm-4 control-label">Evidence</label>
+                  <div class="col-sm-8">
+                    <input type="text" class="form-control" readonly ng-model="data.selectedTweet.cde.author.maritalStatus.evidence">
+                  </div>
+                </div>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" ng-true-value="'true'" ng-false-value="'false'" disabled ng-model="data.selectedTweet.cde.author.parenthood.isParent"> Author has children
+                <div class="form-group">
+                  <label class="col-sm-4 control-label">Evidence</label>
+                  <div class="col-sm-8">
+                    <input type="text" class="form-control" readonly ng-model="data.selectedTweet.cde.author.parenthood.evidence">
+                  </div>
+                </div>
+              </label>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+<!--
+//------------------------------------------------------------------------------
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//    http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+//------------------------------------------------------------------------------
+-->

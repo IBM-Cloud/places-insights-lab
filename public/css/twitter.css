@@ -1,0 +1,13 @@
+.tweet-image {
+  width: 48px !important;
+  height: 48px !important;
+}
+.tweet-displayName {
+  font-weight: bold;
+}
+.tweet-handle {
+  font-size: 12px;
+}
+.tweet-postedTime {
+  font-size: 12px;
+}
