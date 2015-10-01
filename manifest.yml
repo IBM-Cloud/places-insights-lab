@@ -2,10 +2,14 @@
 declared-services:
   places-twitterinsights:
     label: twitterinsights
-    plan: Free    
+    plan: Free
+  places-weatherinsights:
+    label: weatherinsights-dev
+    plan: Developer
 applications:
 - services:
-  - places-twitterinsights  
+  - places-twitterinsights
+  - places-weatherinsights
   name:       places-insights-lab
   host:       places-insights-lab
   path:       .
