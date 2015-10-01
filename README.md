@@ -107,9 +107,9 @@ This function will trigger the right API calls to retrieve Weather and Twitter d
 
 | the call to retrieve... | is implemeted in [public/js/app.js](public/js/app.js) as... | on the backend, in [lib/server.js](lib/server.js) it is received by... | and delegated to... | finally when the response comes back, it is rendered by |
 | --------------- |-------------------------|---------------------|-------------------------------------------------------|--------------|
-| Current weather | WeatherService#current  | api_weatherCurrent  | [lib/weather.js](lib/weather.js) currentByGeolocation | weather.html |
-| 10 day forecast | WeatherService#forecast | api_weatherForecast | [lib/weather.js](lib/weather.js) tendayByGeolocation  | weather.html |
-| Tweets          | TwitterService#tweets   | api_tweets          | [lib/twitter.js](lib/twitter.js) search               | twitter.html |
+| Current weather | WeatherService#current  | #api_weatherCurrent  | [lib/weather.js](lib/weather.js) #currentByGeolocation | [weather.html](public/partials/weather.html) |
+| 10 day forecast | WeatherService#forecast | #api_weatherForecast | [lib/weather.js](lib/weather.js) #tendayByGeolocation  | [weather.html](public/partials/weather.html) |
+| Tweets          | TwitterService#tweets   | #api_tweets          | [lib/twitter.js](lib/twitter.js) #search               | [twitter.html](public/partials/twitter.html) |
 
 ## Congratulations
 
