@@ -49,7 +49,7 @@ This application proposes a list of places across the globe. Once you will have 
   ![Application with no data](xdocs/lab/app-with-no-data.png)
 
 The application uses Node.JS for the backend, AngularJS for the user interface and two IBM Bluemix services:
-* The [Insights for Weather][insights-weather-url] service provides current weather observation of forecast for any location on Earth.
+* The [Insights for Weather][insights-weather-url] service provides weather observation and forecast for a specified geolocation.
 * The [Insights for Twitter][insights-twitter-url] service provides access to Twitter Decahose (10% of Twitter data) and Twitter PowerTrack (100% of Twitter data) together with sentiment analysis and social enrichments.
 
 ## Modify the existing application
@@ -62,11 +62,11 @@ Now that you have the basics running it is time to add more functionality to thi
    
 2. Clicking on **Edit Code** will take you to the Jazz Hub repository, which will allow us to edit and push new versions of our code to the application.
 
-3. With the repository, navigate to public/js/app.js and open that file to view the application source code
+3. With the repository, navigate to `public/js/app.js` and open that file to view the application source code
 
   ![Edit](xdocs/lab/edit.png)
 
-4. Locate the comment *Retrieve current weather*. The implementation of the function currently returns an empty object. Comment the line returning the empty object and uncomment the actual code calling the server API. Note that the implementation calls an API on our backend, passing the latitude and longitude of a location.
+4. Locate the comment *Retrieve current weather*. The implementation of the function currently returns an empty object. Comment the line returning the empty object and uncomment the actual code calling the server API. Note that the implementation calls an API on the backend, passing the latitude and longitude of a location.
 
 5. Repeat the same operation for the comment *Retrieve 10 day forecast*. The code to uncomment will call the backend API to get weather forecast.
 
@@ -111,6 +111,24 @@ This function will trigger the right API calls to retrieve Weather and Twitter d
 | 10 day forecast | WeatherService#forecast | #api_weatherForecast | [lib/weather.js](lib/weather.js) #tendayByGeolocation  | [weather.html](public/partials/weather.html) |
 | Tweets          | TwitterService#tweets   | #api_tweets          | [lib/twitter.js](lib/twitter.js) #search               | [twitter.html](public/partials/twitter.html) |
 
+### Insights for Weather API
+
+Opening [lib/weather.js](lib/weather.js), you can find the implementation of the calls to the Insights for Weather service.
+The service REST APIs are:
+  ![Insights for Weather API](xdocs/lab/weather-api.png)
+  
+All operations listed above take a geolocation as input together with a language for the messages being returned
+(for example, en-US, es, es-MX, fr-FR) and units of measure for the data (for example, e=Imperial(English), m=Metric, h=Hybrid).
+
+### Insights for Twitter API
+
+The calls to the Insights for Twitter service are implemented in [lib/twitter.js](lib/twitter.js).
+The service has two sets of REST APIs:
+  * one to query Twitter Decahose (10% of Twitter) - this is the one used in our application
+  ![Insights for Twitter Decahose API](xdocs/lab/twitter-decahose-api.png)
+  * and one to query Twitter PowerTrack (100% of Twitter)
+  ![Insights for Twitter PowerTrack API](xdocs/lab/twitter-tracks-api.png)
+
 ## Congratulations
 
 You have completed the lab!
@@ -136,6 +154,6 @@ This data is collected from the VCAP_APPLICATION environment variable in IBM Blu
 Deployment tracking can be disabled by removing `require("cf-deployment-tracker-client").track();` from the beginning of the `app.js` file.
 
 [bluemix-signup-url]: https://console.ng.bluemix.net/registration/
-[insights-twitter-url]: http://bluemix.net
-[insights-weather-url]: http://bluemix.net
+[insights-twitter-url]: https://console.ng.bluemix.net/catalog/ibm-insights-for-twitter/
+[insights-weather-url]: https://console.ng.bluemix.net/catalog/ibm-insights-for-weather/
 [bluemix-console-url]: https://console.ng.bluemix.net/
