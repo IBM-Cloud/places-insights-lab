@@ -1,25 +1,30 @@
+.weather-current {
+  margin-top: 10px !important;
+  margin-bottom: 10px;
+}
+
 .weather-current .media-left {
   text-align: center;
 }
+
+.weather-current-temp {
+  font-size: 50px;
+}
+
+.weather-current-temp-mode {
+  font-size: 24px;
+  line-height: 50px;
+  vertical-align: super;
+}
+
 .weather-current-icon {
-  width: 128px;
-  height: 128px;
+  width: 96px;
+  height: 96px;
 }
 
 /**
  * 10 day
  */
-
-.weather-10-day {
-  display: inline;
-}
-.weather-day-box {
-  border: 1px solid #eee;
-  display: inline-table;
-  padding: 4px;
-  width: 60px;
-  font-size: 12px;
-}
 .weather-day-icon {
   width: 48px;
   height: 48px;

@@ -74,6 +74,20 @@ wtServices
   }]);
 
 var wtControllers = angular.module('wtControllers', []);
+
+wtControllers.filter('formatTemperature', [
+  function() {
+    return function(input, scale) {
+      // input is assumed in Fahrenheit
+      if (scale == 'C') {
+        return Math.round((input - 32) * 5.0 / 9.0);;
+      } else {
+        return input;
+      }
+    }
+  }
+]);
+
 wtControllers
   .controller('MainController', ['$scope', 'PlacesService', 'WeatherService', 'TwitterService',
   function ($scope, PlacesService, WeatherService, TwitterService) {
@@ -83,7 +97,8 @@ wtControllers
         current: {},
         forecast: {},
         tweets: [],
-        selectedTweet: {}
+        selectedTweet: {},
+        temperatureMode: 'F'
       };
 
       PlacesService.load().then(function (places) {
@@ -93,6 +108,10 @@ wtControllers
         }
       });
 
+      $scope.setTemperatureMode = function(mode) {
+        $scope.data.temperatureMode = mode;
+      }
+      
       $scope.updateInsights = function (place) {
         console.info("Retrieving insights for", place);
 
@@ -103,12 +122,15 @@ wtControllers
         $("#selected-tweet").text("");
 
         WeatherService.current(place.lat, place.lon).then(function (current) {
+          console.log("Current", current);
           $scope.data.currentWeather = current;
         });
         WeatherService.forecast(place.lat, place.lon).then(function (forecast) {
+          console.log("Forecast", forecast);
           $scope.data.weatherForecast = forecast;
         });
         TwitterService.tweets(place.name).then(function (tweets) {
+          console.log("Tweets", tweets);
           $scope.data.tweets = tweets;
         });
       };

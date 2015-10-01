@@ -11,29 +11,53 @@
   </div>
 </div>
 
-<div class="weather well" ng-if="data.currentWeather.observation">
+<div class="weather" ng-if="data.currentWeather.observation">
   <div class="media weather-current">
     <div class="media-left">
       <img class="media-object weather-current-icon" ng-src="images/twc/{{data.currentWeather.observation.icon_code}}.png" /> {{data.currentWeather.observation.phrase_32char}}
     </div>
     <div class="media-body">
-      <h4 class="media-heading">{{data.currentWeather.observation.metric.temp}}</h4>
-      <div>Feels like {{data.currentWeather.observation.metric.feels_like}}</div>
-      <div>Lat: {{data.currentWeather.metadata.latitude}}, Lon: {{controller.data.currentWeather.metadata.longitude}}</div>
-      <div>Updated {{data.currentWeather.observation.obs_time_local}}</div>
+      <h4 class="weather-current-temp media-heading">
+        {{data.currentWeather.observation.imperial.temp | formatTemperature: data.temperatureMode }}
+        <span class="weather-current-temp-mode">
+        <a href="#" ng-click="setTemperatureMode('F')" ng-if="data.temperatureMode=='C'">°F</a>
+        <span ng-if="data.temperatureMode=='F'">°F</span>
+        |
+        <a href="#" ng-click="setTemperatureMode('C')" ng-if="data.temperatureMode=='F'">°C</a>
+        <span ng-if="data.temperatureMode=='C'">°C</span>
+        </span>
+      </h4>
+      <div>Feels like {{data.currentWeather.observation.imperial.feels_like | formatTemperature: data.temperatureMode }}°</div>
+      <div>Humidity: {{data.currentWeather.observation.imperial.rh}}%</div>
+      <div class="text-muted">Updated {{data.currentWeather.observation.obs_time_local}}</div>
     </div>
   </div>
 
-  <div ng-repeat="forecast in data.weatherForecast.forecasts" class="weather-day-box" ng-if="forecast.day">
-    <span class="weather-day-weekday">{{forecast.dow}}</span>
-    <br/>
-    <img class="weather-day-icon" ng-src="images/twc/{{forecast.day.icon_code}}.png" />
-    <br/>
-    <div>
-      <span class="weather-day-temp">{{forecast.day.temp}}</span>
-      <span class="weather-day-min_temp">{{forecast.min_temp}}</span>
-    </div>
-  </div>
+  <ul class="list-group">
+    <a href="#" class="list-group-item" ng-repeat="forecast in data.weatherForecast.forecasts" ng-if="forecast.day">
+      <div class="media">
+        <div class="media-left">
+          <img class="weather-day-icon media-object" ng-src="images/twc/{{forecast.day.icon_code}}.png" />
+        </div>
+        <div class="media-body">
+          <div>
+            <h4 class="media-heading">{{forecast.dow}}</h4>
+            <div class="row">
+              <div class="col-md-6">
+                <div>{{forecast.day.phrase_32char}}</div>
+                <span class="weather-day-temp">{{forecast.day.temp | formatTemperature: data.temperatureMode }}°</span> /
+                <span class="weather-day-min_temp">{{forecast.min_temp | formatTemperature: data.temperatureMode }}°</span>
+              </div>
+              <div class="col-md-6">
+                <div>Precipitations: {{forecast.day.pop}}%</div>
+                <div>Humidity: {{forecast.day.rh}}%</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </a>
+  </ul>
 </div>
 <!--
 //------------------------------------------------------------------------------
