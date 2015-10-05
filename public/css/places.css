@@ -1,3 +1,16 @@
+.places {
+  width: 100%;
+  text-align: center;
+}
+
 .list-place-item {
   list-style: none;
+  text-align: left;
+}
+
+.top-level-place {
+  display: inline-table;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #eee;
 }

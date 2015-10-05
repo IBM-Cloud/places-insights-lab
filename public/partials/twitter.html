@@ -1,7 +1,7 @@
 <!--
 // Licensed under the Apache License. See footer for details.
 -->
-<h2>Tweets<span ng-if="data.selectedPlace.name"> about {{data.selectedPlace.name}}</span></h2>
+<h2><span ng-if="data.tweets.length > 0">{{data.tweets.length}}</span> Tweets<span ng-if="data.selectedPlace.name"> about {{data.selectedPlace.name}}</span></h2>
 
 
 <div class="row">
@@ -14,6 +14,11 @@
         <json-formatter json="data.tweets" open="1"></json-formatter>
       </div>
     </div>
+
+    <div id="loading-twitter">
+      Loading tweets...
+    </div>
+
     <div>
       <ul class="list-group">
         <a href="#" class="list-group-item" ng-repeat="tweet in data.tweets">
@@ -68,11 +73,7 @@
         <div class="form-group">
           <label class="col-sm-4 control-label">Location</label>
           <div class="col-sm-8">
-            <span class="form-control" disabled>
-                        {{data.selectedTweet.cde.author.location.city}}
-                        {{data.selectedTweet.cde.author.location.state}}
-                        {{data.selectedTweet.cde.author.location.country}}
-                      </span>
+            <input type="text" class="form-control" disabled value="{{data.selectedTweet.cde.author.location.city}} {{data.selectedTweet.cde.author.location.state}} {{data.selectedTweet.cde.author.location.country}}">
           </div>
         </div>
 

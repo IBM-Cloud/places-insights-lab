@@ -121,17 +121,24 @@ wtControllers
         $scope.data.tweets = [];
         $("#selected-tweet").text("");
 
+        $("#loading-weather-current").show();
+        $("#loading-weather-forecast").show();
+        $("#loading-twitter").show();
+        
         WeatherService.current(place.lat, place.lon).then(function (current) {
           console.log("Current", current);
+          $("#loading-weather-current").hide();
           $scope.data.currentWeather = current;
         });
         WeatherService.forecast(place.lat, place.lon).then(function (forecast) {
           console.log("Forecast", forecast);
+          $("#loading-weather-forecast").hide();
           $scope.data.weatherForecast = forecast;
         });
         TwitterService.tweets(place.name).then(function (tweets) {
           console.log("Tweets", tweets);
           $scope.data.tweets = tweets;
+          $("#loading-twitter").hide();
         });
       };
 
@@ -154,7 +161,7 @@ wtControllers
       };
   }]);
 
-var app = angular.module('wtApp', ['jsonFormatter', 'wtControllers', 'wtServices']);
+var app = angular.module('wtApp', ['jsonFormatter', 'wtControllers', 'wtServices' ]);
 
 //------------------------------------------------------------------------------
 // Licensed under the Apache License, Version 2.0 (the "License");

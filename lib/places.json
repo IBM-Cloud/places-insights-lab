@@ -20,6 +20,28 @@
     ]
   },
   {
+    "name": "London",
+    "type": "city",
+    "lat": 51.5073509,
+    "lon": -0.12775829999998223,
+    "places": [
+      {
+        "name": "Tower of London",
+        "type": "monument",
+        "lat": 51.508112,
+        "lon": -0.0759490000000369,
+        "query": "tower london"
+      },
+      {
+        "name": "Madame Tussauds London",
+        "type": "museum",
+        "lat": 51.52289010000001,
+        "lon": -0.15496710000002167,
+        "query": "tussauds museum"
+      }
+    ]
+  },
+  {
     "name": "New York",
     "type": "city",
     "lat": 40.7127837,
@@ -38,5 +60,11 @@
         "lon": -73.96535499999999
       }
     ]
+  },
+  {
+    "name": "Terra-cotta Warriors and Horses, China",
+    "type": "museum",
+    "lat": 34.382526,
+    "lon": 109.28444400000001
   }
 ]

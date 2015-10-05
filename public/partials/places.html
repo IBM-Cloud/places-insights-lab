@@ -3,7 +3,6 @@
 -->
 <div>
   <h2>Places</h2>
-  <hr/>
   <script type="text/ng-template" id="placeTree">
     <div class="radio">
       <label>
@@ -16,12 +15,12 @@
     </ul>
   </script>
 
-  <ul>
-    <li class="list-place-item" ng-repeat="place in data.places" ng-include="'placeTree'"></li>
+  <ul class="places">
+    <li class="list-place-item top-level-place" ng-repeat="place in data.places" ng-include="'placeTree'"></li>
   </ul>
 
-  <hr/>
 </div>
+
 <!--
 //------------------------------------------------------------------------------
 // Licensed under the Apache License, Version 2.0 (the "License");
