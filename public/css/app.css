@@ -15,11 +15,8 @@
   background: #FFF;
 }
 
-.jumbotron {
-  padding-top: 48px !important;
-  background-color: #FFF;
-  padding-bottom: 0px;
-  margin-bottom: 0px;
+.lab-description {
+  padding-top: 58px;
 }
 
 .source-panel {
