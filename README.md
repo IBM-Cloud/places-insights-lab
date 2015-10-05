@@ -136,6 +136,13 @@ The service has two sets of REST APIs:
 
 You have completed the lab!
 
+## Want to go further?
+
+Here are some suggestions to improve the application:
+  * Insights for Twitter and Insights for Weather API allow querying language-specific data. Improve the application by automatically detecting the user language or providing a language selector to display weather data and tweets in the selected language.
+  * Retrieve and display hourly forecast from the Insights for Weather service
+  * Use a map instead of hardcoded locations.
+
 ## Credits
 
 * [json formatter](https://github.com/mohsen1/json-formatter)
