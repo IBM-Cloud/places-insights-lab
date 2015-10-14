@@ -8,20 +8,21 @@
         "type": "monument",
         "lat": 40.7484404,
         "lon": -73.98565539999998,
-        "query": "(visit OR travel) AND (\"empire state\"~3)"
+        "query": "(#visit OR #travel) AND (\"empire state\"~3)"
       },
       {
         "name": "Central Park",
         "type": "monument",
         "lat": 40.782865,
-        "lon": -73.96535499999999
+        "lon": -73.96535499999999,
+        "query": "(#visit OR #travel) AND (\"central park\")"
       },
       {
         "name": "Hoover Dam",
         "type": "monument",
         "lat": 36.016066,
         "lon": -114.737732,
-        "query": "(visit OR travel) AND (\"Hoover Dam\")"
+        "query": "(#visit OR #travel) AND (\"Hoover Dam\")"
       }
     ]
   },
@@ -34,28 +35,28 @@
         "type": "monument",
         "lat": 48.85837,
         "lon": 2.294481000000019,
-        "query": "(visit OR travel) AND (\"tour eiffel\")"
+        "query": "(#visit OR #travel) AND (\"tour eiffel\")"
       },
       {
         "name": "Notre-Dame of Paris",
         "type": "monument",
         "lat": 48.852968,
         "lon": 2.349901999999929,
-        "query": "(visit OR travel) AND (\"notre dame paris\"~4)"
+        "query": "(#visit OR #travel) AND (\"notre dame paris\"~4)"
       },
       {
         "name": "Tower of London",
         "type": "monument",
         "lat": 51.508112,
         "lon": -0.0759490000000369,
-        "query": "(visit OR travel) AND (\"tower london\"~3)"
+        "query": "(#visit OR #travel) AND (\"tower london\"~3)"
       },
       {
         "name": "Madame Tussauds London",
         "type": "museum",
         "lat": 51.52289010000001,
         "lon": -0.15496710000002167,
-        "query": "(visit OR travel) AND (\"tussauds museum\"~3)"
+        "query": "(#visit OR #travel) AND (\"tussauds museum\"~3)"
       }
     ]
   },
@@ -68,14 +69,14 @@
         "type": "museum",
         "lat": 34.382526,
         "lon": 109.28444400000001,
-        "query": "(visit OR travel) AND (\"terra cotta warriors\"~3)"
+        "query": "(#visit OR #travel) AND (\"terra cotta warriors\"~3)"
       },
       {
         "name": "The Forbidden City",
         "type": "city",
         "lat": "39.9163447",
         "lon": "116.39715460000002",
-        "query": "(visit OR travel) AND (\"the forbidden city\"~3)"
+        "query": "(#visit OR #travel) AND (\"the forbidden city\"~3)"
       }
     ]
   }
