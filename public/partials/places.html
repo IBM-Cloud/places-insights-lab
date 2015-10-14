@@ -4,7 +4,12 @@
 <div>
   <h2>Places</h2>
   <script type="text/ng-template" id="placeTree">
-    <div class="radio">
+    <div ng-if="place.type == 'category'">
+      <label>
+        {{place.name}}
+      </label>
+    </div>
+    <div class="radio" ng-if="place.type != 'category'">
       <label>
         <input type="radio" name="place" ng-click="updateInsights(place)" ng-checked="place == data.selectedPlace"> {{place.name}}
       </label>

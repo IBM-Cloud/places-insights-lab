@@ -1,70 +1,82 @@
 [
   {
-    "name": "Paris",
-    "type": "city",
-    "lat": 48.856614,
-    "lon": 2.3522219000000177,
-    "places": [
-      {
-        "name": "Tour Eiffel",
-        "type": "monument",
-        "lat": 48.85837,
-        "lon": 2.294481000000019
-      },
-      {
-        "name": "Notre-Dame de Paris",
-        "type": "monument",
-        "lat": 48.852968,
-        "lon": 2.349901999999929
-      }
-    ]
-  },
-  {
-    "name": "London",
-    "type": "city",
-    "lat": 51.5073509,
-    "lon": -0.12775829999998223,
-    "places": [
-      {
-        "name": "Tower of London",
-        "type": "monument",
-        "lat": 51.508112,
-        "lon": -0.0759490000000369,
-        "query": "tower london"
-      },
-      {
-        "name": "Madame Tussauds London",
-        "type": "museum",
-        "lat": 51.52289010000001,
-        "lon": -0.15496710000002167,
-        "query": "tussauds museum"
-      }
-    ]
-  },
-  {
-    "name": "New York",
-    "type": "city",
-    "lat": 40.7127837,
-    "lon": -74.00594130000002,
+    "name": "United States of America",
+    "type": "category",
     "places": [
       {
         "name": "Empire State Building",
         "type": "monument",
         "lat": 40.7484404,
-        "lon": -73.98565539999998
+        "lon": -73.98565539999998,
+        "query": "(visit OR travel) AND (\"empire state\"~3)"
       },
       {
         "name": "Central Park",
         "type": "monument",
         "lat": 40.782865,
         "lon": -73.96535499999999
+      },
+      {
+        "name": "Hoover Dam",
+        "type": "monument",
+        "lat": 36.016066,
+        "lon": -114.737732,
+        "query": "(visit OR travel) AND (\"Hoover Dam\")"
       }
     ]
   },
   {
-    "name": "Terra-cotta Warriors and Horses, China",
-    "type": "museum",
-    "lat": 34.382526,
-    "lon": 109.28444400000001
+    "name": "Europe",
+    "type": "category",
+    "places": [
+      {
+        "name": "Eiffel Tower",
+        "type": "monument",
+        "lat": 48.85837,
+        "lon": 2.294481000000019,
+        "query": "(visit OR travel) AND (\"tour eiffel\")"
+      },
+      {
+        "name": "Notre-Dame of Paris",
+        "type": "monument",
+        "lat": 48.852968,
+        "lon": 2.349901999999929,
+        "query": "(visit OR travel) AND (\"notre dame paris\"~4)"
+      },
+      {
+        "name": "Tower of London",
+        "type": "monument",
+        "lat": 51.508112,
+        "lon": -0.0759490000000369,
+        "query": "(visit OR travel) AND (\"tower london\"~3)"
+      },
+      {
+        "name": "Madame Tussauds London",
+        "type": "museum",
+        "lat": 51.52289010000001,
+        "lon": -0.15496710000002167,
+        "query": "(visit OR travel) AND (\"tussauds museum\"~3)"
+      }
+    ]
+  },
+  {
+    "name": "China",
+    "type": "category",
+    "places": [
+      {
+        "name": "Terra-cotta Warriors and Horses",
+        "type": "museum",
+        "lat": 34.382526,
+        "lon": 109.28444400000001,
+        "query": "(visit OR travel) AND (\"terra cotta warriors\"~3)"
+      },
+      {
+        "name": "The Forbidden City",
+        "type": "city",
+        "lat": "39.9163447",
+        "lon": "116.39715460000002",
+        "query": "(visit OR travel) AND (\"the forbidden city\"~3)"
+      }
+    ]
   }
 ]

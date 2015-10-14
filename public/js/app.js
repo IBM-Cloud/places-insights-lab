@@ -76,8 +76,8 @@ wtServices
 var wtControllers = angular.module('wtControllers', []);
 
 wtControllers.filter('formatTemperature', [
-  function() {
-    return function(input, scale) {
+  function () {
+    return function (input, scale) {
       // input is assumed in Fahrenheit
       if (scale == 'C') {
         return Math.round((input - 32) * 5.0 / 9.0);;
@@ -101,17 +101,19 @@ wtControllers
         temperatureMode: 'F'
       };
 
-      PlacesService.load().then(function (places) {
-        $scope.data.places = places;
-        if (places.length > 0) {
-          $scope.updateInsights(places[0]);
-        }
-      });
+      setTimeout(function () {
+        PlacesService.load().then(function (places) {
+          $scope.data.places = places;
+          if (places.length > 0) {
+            $scope.updateInsights(places[0].places[0]);
+          }
+        });
+      }, 500);
 
-      $scope.setTemperatureMode = function(mode) {
+      $scope.setTemperatureMode = function (mode) {
         $scope.data.temperatureMode = mode;
       }
-      
+
       $scope.updateInsights = function (place) {
         console.info("Retrieving insights for", place);
 
@@ -124,7 +126,7 @@ wtControllers
         $("#loading-weather-current").show();
         $("#loading-weather-forecast").show();
         $("#loading-twitter").show();
-        
+
         WeatherService.current(place.lat, place.lon).then(function (current) {
           console.log("Current", current);
           $("#loading-weather-current").hide();
@@ -135,7 +137,7 @@ wtControllers
           $("#loading-weather-forecast").hide();
           $scope.data.weatherForecast = forecast;
         });
-        TwitterService.tweets(place.name).then(function (tweets) {
+        TwitterService.tweets(place.query).then(function (tweets) {
           console.log("Tweets", tweets);
           $scope.data.tweets = tweets;
           $("#loading-twitter").hide();
@@ -161,7 +163,7 @@ wtControllers
       };
   }]);
 
-var app = angular.module('wtApp', ['jsonFormatter', 'wtControllers', 'wtServices' ]);
+var app = angular.module('wtApp', ['jsonFormatter', 'wtControllers', 'wtServices']);
 
 //------------------------------------------------------------------------------
 // Licensed under the Apache License, Version 2.0 (the "License");
