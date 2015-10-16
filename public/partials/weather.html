@@ -37,7 +37,7 @@
       </h4>
       <div>Feels like {{data.currentWeather.observation.imperial.feels_like | formatTemperature: data.temperatureMode }}°</div>
       <div>Humidity: {{data.currentWeather.observation.imperial.rh}}%</div>
-      <div class="text-muted">Updated {{data.currentWeather.observation.obs_time_local}}</div>
+      <div class="text-muted">Updated <span data-livestamp="{{data.currentWeather.observation.obs_time}}"></span></div>
     </div>
   </div>
 
