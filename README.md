@@ -1,5 +1,6 @@
 # Places Insights Hands on Labs
 
+
 *The most recent version of these instructions can be found at https://ibm.biz/bluemix-wt-lab*
 
 Places Insights provides weather observation and related tweets for famous places to visit.
@@ -8,6 +9,8 @@ The lab will guide you through deploying your own instance of the application in
 and modifying the code to retrieve data from the two services.
 
 Let's get started. The first thing to do is to build out the shell of our application in Bluemix.
+
+*Command-line aficionados, if you want to, we got you covered with [this other set of instructions](INSTRUCTIONS-CLI.md).*
 
 ## Creating a IBM Bluemix account
 
@@ -117,7 +120,7 @@ This function will trigger the right API calls to retrieve Weather and Twitter d
 ### Insights for Weather API
 
 Opening [lib/weather.js](lib/weather.js), you can find the implementation of the calls to the Insights for Weather service.
-The service REST APIs are:
+The service [REST APIs](https://twcservice.mybluemix.net/rest-api/) are:
   ![Insights for Weather API](xdocs/lab/weather-api.png)
   
 All operations listed above take a geolocation as input together with a language for the messages being returned
@@ -126,7 +129,7 @@ All operations listed above take a geolocation as input together with a language
 ### Insights for Twitter API
 
 The calls to the Insights for Twitter service are implemented in [lib/twitter.js](lib/twitter.js).
-The service has two sets of REST APIs:
+The service has two sets of [REST APIs](https://cdeservice.mybluemix.net/rest-api/):
   * one to query Twitter Decahose (10% of Twitter) - this is the one used in our application
   ![Insights for Twitter Decahose API](xdocs/lab/twitter-decahose-api.png)
   * and one to query Twitter PowerTrack (100% of Twitter)
@@ -139,7 +142,9 @@ You have completed the lab!
 ## Want to go further?
 
 Here are some suggestions to improve the application:
-  * Insights for Twitter and Insights for Weather API allow querying language-specific data. Improve the application by automatically detecting the user language or providing a language selector to display weather data and tweets in the selected language.
+  * Insights for Twitter and Insights for Weather API allow querying language-specific data.
+    Improve the application by automatically detecting the user language or providing a language selector
+    to display weather data and tweets in the selected language.
   * Retrieve and display hourly forecast from the Insights for Weather service
   * Use a map instead of hardcoded locations.
 
