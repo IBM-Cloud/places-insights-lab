@@ -88,7 +88,7 @@ These credentials can be retrieved in the IBM Bluemix dashboard.
 
   ![Twitter service with no credentials](xdocs/lab/cli-twitter-nocredentials.png)
 
-5. Click "Add Credentials", given them a name (e.g. *for command line*).
+5. Click "Add Credentials" and give them a name (e.g. *for command line*).
 
   A new set of credentials is created for this service.
 
@@ -178,7 +178,7 @@ If you are running locally, simply refresh your web-browser.
 To push your changes to IBM Bluemix run:
 
 ```
-cf push
+$ cf push
 ```
 
 ## Privacy Notice
