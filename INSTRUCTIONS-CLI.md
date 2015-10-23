@@ -58,7 +58,7 @@ $ cf create-service twitterinsights Free places-twitterinsights
 6. Create the Insights for Weather service in Bluemix.
 
 ```
-$ cf create-service weatherinsights-dev Free places-weatherinsights
+$ cf create-service weatherinsights Free places-weatherinsights
 ```
 
 7. Push the application to Bluemix.
@@ -196,6 +196,6 @@ This data is collected from the VCAP_APPLICATION environment variable in IBM Blu
 Deployment tracking can be disabled by removing `require("cf-deployment-tracker-client").track();` from the beginning of the `app.js` file.
 
 [bluemix-signup-url]: https://console.ng.bluemix.net/registration/
-[insights-twitter-url]: https://console.ng.bluemix.net/catalog/ibm-insights-for-twitter/
-[insights-weather-url]: https://console.ng.bluemix.net/catalog/ibm-insights-for-weather/
+[insights-twitter-url]: https://console.ng.bluemix.net/catalog/insights-for-twitter/
+[insights-weather-url]: https://console.ng.bluemix.net/catalog/insights-for-weather/
 [bluemix-console-url]: https://console.ng.bluemix.net/

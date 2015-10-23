@@ -4,8 +4,8 @@ declared-services:
     label: twitterinsights
     plan: Free
   places-weatherinsights:
-    label: weatherinsights-dev
-    plan: Developer
+    label: weatherinsights
+    plan: Free
 applications:
 - services:
   - places-twitterinsights
