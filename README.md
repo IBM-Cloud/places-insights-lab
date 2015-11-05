@@ -1,8 +1,5 @@
 # Places Insights Hands on Labs
 
-
-*The most recent version of these instructions can be found at https://ibm.biz/bluemix-wt-lab*
-
 Places Insights provides weather observation and related tweets for famous places to visit.
 It uses the [Insights for Twitter][insights-twitter-url] and [Insights for Weather][insights-weather-url] services in IBM Bluemix.
 The lab will guide you through deploying your own instance of the application in IBM Bluemix
