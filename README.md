@@ -19,7 +19,7 @@ Let's get started. The first thing to do is to build out the shell of our applic
 
 1. Click the button below to fork the project into IBM Bluemix DevOps Services and deploy your own instance of this application on IBM Bluemix.
 
-  [![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy?repository=https://github.com/IBM-Bluemix/places-insights-lab)
+  [![Deploy to Bluemix](https://deployment-tracker.mybluemix.net/stats/fb6eaf8a3f88a7411795ea959fe53d44/button.svg)](https://bluemix.net/deploy?repository=https://github.com/IBM-Bluemix/places-insights-lab)
 
 2. From here you will be taken to a page, where you will be prompted to name your app. A sample name is provided for you, but feel free to give your application any name you like (if the name is taken by another user, you will be prompted to try another name).
 
