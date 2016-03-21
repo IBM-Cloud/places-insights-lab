@@ -139,6 +139,7 @@ You have completed the lab!
 ## Want to go further?
 
 Here are some suggestions to improve the application:
+  * Update the Twitter for Insights query to return only the tweets from the 30 days or even make it a parameter of the user interface
   * Insights for Twitter and Insights for Weather API allow querying language-specific data.
     Improve the application by automatically detecting the user language or providing a language selector
     to display weather data and tweets in the selected language.
