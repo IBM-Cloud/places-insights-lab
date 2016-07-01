@@ -55,10 +55,10 @@ $ cf login
 $ cf create-service twitterinsights Free places-twitterinsights
 ```
 
-6. Create the Insights for Weather service in Bluemix.
+6. Create the Weather Company Data for IBM Bluemix service.
 
 ```
-$ cf create-service weatherinsights Free places-weatherinsights
+$ cf create-service weatherinsights Free-v2 places-weatherinsights
 ```
 
 7. Push the application to Bluemix.
@@ -73,7 +73,7 @@ Navigate to the application url, e.g. `<application-host>.mybluemix.net`.
 ## Running locally
 
 You can run the application locally, connecting to the services running in IBM Bluemix.
-To do so you need we will create one file to store the Insights for Twitter and Insights for Weather service credentials.
+To do so you need we will create one file to store the Insights for Twitter and Weather Company Data for IBM Bluemix service credentials.
 These credentials can be retrieved in the IBM Bluemix dashboard.
 
 ### Get credentials for the services
@@ -94,7 +94,7 @@ These credentials can be retrieved in the IBM Bluemix dashboard.
 
   ![Twitter service with credentials](xdocs/lab/cli-twitter-credentials.png)
 
-6. Repeat the previous steps with the Insights for Weather service named *places-weatherinsights*.
+6. Repeat the previous steps with the Weather Company Data for IBM Bluemix service named *places-weatherinsights*.
 
   ![Weather service with credentials](xdocs/lab/cli-weather-credentials.png)
 
@@ -197,5 +197,5 @@ Deployment tracking can be disabled by removing `require("cf-deployment-tracker-
 
 [bluemix-signup-url]: https://console.ng.bluemix.net/registration/
 [insights-twitter-url]: https://console.ng.bluemix.net/catalog/insights-for-twitter/
-[insights-weather-url]: https://console.ng.bluemix.net/catalog/insights-for-weather/
+[insights-weather-url]: https://console.ng.bluemix.net/catalog/weather-company-data-for-ibm-bluemix/
 [bluemix-console-url]: https://console.ng.bluemix.net/

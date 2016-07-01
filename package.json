@@ -18,16 +18,13 @@
     "start": "node app.js",
     "postinstall": "bower install --allow-root"
   },
-  "engines": {
-    "node": "0.12.*"
-  },
   "dependencies": {
-    "bower": "1.5.x",
-    "cf-deployment-tracker-client": "0.0.8",
+    "bower": "1.7.x",
+    "cf-deployment-tracker-client": "0.1.1",
     "cfenv": "^1.0.0",
-    "hapi": "^10.0.1",
-    "inert": "^3.0.1",
-    "lodash": "^3.10.1",
+    "hapi": "^13.4.1",
+    "inert": "^4.0.0",
+    "lodash": "^4.13.1",
     "moment": "^2.10.6",
     "path": "^0.12.7",
     "request": "^2.63.0"

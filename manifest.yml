@@ -5,16 +5,10 @@ declared-services:
     plan: Free
   places-weatherinsights:
     label: weatherinsights
-    plan: Free
+    plan: Free-v2
 applications:
 - services:
   - places-twitterinsights
   - places-weatherinsights
   name:       places-insights-lab
   host:       places-insights-lab
-  path:       .
-  domain:     mybluemix.net
-  instances:  1
-  memory:     256M
-  command:    node app
-  buildpack:  sdk-for-nodejs

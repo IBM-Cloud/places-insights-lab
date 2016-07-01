@@ -1,7 +1,7 @@
 # Places Insights Hands on Labs
 
 Places Insights provides weather observation and related tweets for famous places to visit.
-It uses the [Insights for Twitter][insights-twitter-url] and [Insights for Weather][insights-weather-url] services in IBM Bluemix.
+It uses the [Insights for Twitter][insights-twitter-url] and [Weather Company Data][insights-weather-url] services in IBM Bluemix.
 The lab will guide you through deploying your own instance of the application in IBM Bluemix
 and modifying the code to retrieve data from the two services.
 
@@ -52,7 +52,7 @@ This application proposes a list of places across the globe. Once you will have 
   ![Application with no data](xdocs/lab/app-with-no-data.png)
 
 The application uses Node.JS for the backend, AngularJS for the user interface and two IBM Bluemix services:
-* The [Insights for Weather][insights-weather-url] service provides weather observation and forecast for a specified geolocation.
+* The [Weather Company Data for IBM Bluemix][insights-weather-url] service provides weather observation and forecast for a specified geolocation (and a lot more).
 * The [Insights for Twitter][insights-twitter-url] service provides access to Twitter Decahose (10% of Twitter data) and Twitter PowerTrack (100% of Twitter data) together with sentiment analysis and social enrichments.
 
 ## Modify the existing application
@@ -114,13 +114,12 @@ This function will trigger the right API calls to retrieve Weather and Twitter d
 | 10 day forecast | WeatherService#forecast | #api_weatherForecast | [lib/weather.js](lib/weather.js) #tendayByGeolocation  | [weather.html](public/partials/weather.html) |
 | Tweets          | TwitterService#tweets   | #api_tweets          | [lib/twitter.js](lib/twitter.js) #search               | [twitter.html](public/partials/twitter.html) |
 
-### Insights for Weather API
+### Weather Company Data for IBM Bluemix API
 
-Opening [lib/weather.js](lib/weather.js), you can find the implementation of the calls to the Insights for Weather service.
-The service [REST APIs](https://twcservice.mybluemix.net/rest-api/) are:
-  ![Insights for Weather API](xdocs/lab/weather-api.png)
+Opening [lib/weather.js](lib/weather.js), you can find the implementation of the calls to the Weather Company Data for IBM Bluemix service.
+The service REST APIs can be found [here](https://twcservice.mybluemix.net/rest-api/).
   
-All operations listed above take a geolocation as input together with a language for the messages being returned
+All operations used in this lab take a geolocation as input together with a language for the messages being returned
 (for example, en-US, es, es-MX, fr-FR) and units of measure for the data (for example, e=Imperial(English), m=Metric, h=Hybrid).
 
 ### Insights for Twitter API
@@ -168,5 +167,5 @@ Deployment tracking can be disabled by removing `require("cf-deployment-tracker-
 
 [bluemix-signup-url]: https://console.ng.bluemix.net/registration/
 [insights-twitter-url]: https://console.ng.bluemix.net/catalog/insights-for-twitter/
-[insights-weather-url]: https://console.ng.bluemix.net/catalog/insights-for-weather/
+[insights-weather-url]: https://console.ng.bluemix.net/catalog/weather-company-data-for-ibm-bluemix/
 [bluemix-console-url]: https://console.ng.bluemix.net/

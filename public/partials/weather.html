@@ -22,11 +22,11 @@
 <div class="weather" ng-if="data.currentWeather.observation">
   <div class="media weather-current">
     <div class="media-left">
-      <img class="media-object weather-current-icon" ng-src="images/twc/{{data.currentWeather.observation.icon_code}}.png" /> {{data.currentWeather.observation.phrase_32char}}
+      <img class="media-object weather-current-icon" ng-src="images/twc/{{data.currentWeather.observation.wx_icon}}.png" /> {{data.currentWeather.observation.phrase_32char}}
     </div>
     <div class="media-body">
       <h4 class="weather-current-temp media-heading">
-        {{data.currentWeather.observation.imperial.temp | formatTemperature: data.temperatureMode }}
+        {{data.currentWeather.observation.temp | formatTemperature: data.temperatureMode }}
         <span class="weather-current-temp-mode">
         <a href="#" ng-click="setTemperatureMode('F')" ng-if="data.temperatureMode=='C'">°F</a>
         <span ng-if="data.temperatureMode=='F'">°F</span>
@@ -35,9 +35,9 @@
         <span ng-if="data.temperatureMode=='C'">°C</span>
         </span>
       </h4>
-      <div>Feels like {{data.currentWeather.observation.imperial.feels_like | formatTemperature: data.temperatureMode }}°</div>
-      <div>Humidity: {{data.currentWeather.observation.imperial.rh}}%</div>
-      <div class="text-muted">Updated <span data-livestamp="{{data.currentWeather.observation.obs_time}}"></span></div>
+      <div>Feels like {{data.currentWeather.observation.feels_like | formatTemperature: data.temperatureMode }}°</div>
+      <div>Humidity: {{data.currentWeather.observation.rh}}%</div>
+      <div class="text-muted">Updated <span data-livestamp="{{data.currentWeather.observation.valid_time_gmt}}"></span></div>
     </div>
   </div>
 
