@@ -1,5 +1,7 @@
 # Places Insights Hands on Labs
 
+> :warning: **DEPRECATED** This sample used the [now retired Insights for Twitter](https://www.ibm.com/blogs/bluemix/2017/03/retirement-insights-twitter-service/) service. Source code is kept as reference only.
+
 Places Insights provides weather observation and related tweets for famous places to visit.
 It uses the [Insights for Twitter][insights-twitter-url] and [Weather Company Data][insights-weather-url] services in IBM Bluemix.
 The lab will guide you through deploying your own instance of the application in IBM Bluemix
@@ -14,26 +16,6 @@ Let's get started. The first thing to do is to build out the shell of our applic
 1. Sign up for IBM Bluemix at [the registration page][bluemix-signup-url] if you don't already have a IBM Bluemix account.
 
 2. Log in your IBM Bluemix account.
-
-## Deploy this application on IBM Bluemix
-
-1. Click the button below to fork the project into IBM Bluemix DevOps Services and deploy your own instance of this application on IBM Bluemix.
-
-  [![Deploy to Bluemix](https://deployment-tracker.mybluemix.net/stats/fb6eaf8a3f88a7411795ea959fe53d44/button.svg)](https://bluemix.net/deploy?repository=https://github.com/IBM-Bluemix/places-insights-lab)
-
-2. From here you will be taken to a page, where you will be prompted to name your app. A sample name is provided for you, but feel free to give your application any name you like (if the name is taken by another user, you will be prompted to try another name).
-
-  ![Deploy Options](xdocs/lab/deploy-options.png)
-
-  **Note:** You can keep the default settings for Region, Organization and Space.
-
-3. Once you have named your application, click the Deploy button to begin the deploy process to IBM Bluemix. During this process, IBM Bluemix will automatically build and deploy our application based on the GitHub repository.
-
-4. Once the application has finished deploying, you will see a "Success!" message.
-
-  ![Deploy Success](xdocs/lab/deploy-success.png)
-
-The process has created a new private DevOps Services project, a git clone of the lab source code repository, built your application and deployed it to IBM Bluemix. In addition, it configured a Build & Deploy pipeline that will get triggered whenever your commit changes to the Git repository. We will see it in action when we will modify the application code.
 
 ## Test the application
 
@@ -62,7 +44,7 @@ Now that you have the basics running it is time to add more functionality to thi
 1. Let's edit our source code. Back on the application overview page in IBM Bluemix, you will see a link to the Jazz Hub repository, and a button to **Edit Code**. Click on **Edit Code**
 
   ![Go to Edit](xdocs/lab/edit-code.png)
-   
+
 2. Clicking on **Edit Code** will take you to the Jazz Hub repository, which will allow us to edit and push new versions of our code to the application.
 
 3. With the repository, navigate to `public/js/app.js` and open that file to view the application source code
@@ -74,7 +56,7 @@ Now that you have the basics running it is time to add more functionality to thi
 5. Repeat the same operation for the comment *Retrieve 10 day forecast*. The code to uncomment will call the backend API to get weather forecast.
 
 6. Repeat the same operation for the comment *Retrieve tweets for location*. The code to uncomment will call the backend API to get some tweets about the location.
-  
+
 7. Click on File > Save or press Ctrl+S
 
 ## Deploy
@@ -118,7 +100,7 @@ This function will trigger the right API calls to retrieve Weather and Twitter d
 
 Opening [lib/weather.js](lib/weather.js), you can find the implementation of the calls to the Weather Company Data for IBM Bluemix service.
 The service REST APIs can be found [here](https://twcservice.mybluemix.net/rest-api/).
-  
+
 All operations used in this lab take a geolocation as input together with a language for the messages being returned
 (for example, en-US, es, es-MX, fr-FR) and units of measure for the data (for example, e=Imperial(English), m=Metric, h=Hybrid).
 
