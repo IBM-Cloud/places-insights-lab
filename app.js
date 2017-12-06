@@ -1,9 +1,6 @@
 // Licensed under the Apache License. See footer for details.
 require("./lib/server")
 
-//---Deployment Tracker---------------------------------------------------------
-require("cf-deployment-tracker-client").track();
-
 //------------------------------------------------------------------------------
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.

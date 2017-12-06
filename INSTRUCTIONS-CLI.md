@@ -181,20 +181,6 @@ To push your changes to IBM Bluemix run:
 $ cf push
 ```
 
-## Privacy Notice
-The lab application includes code to track deployments to IBM Bluemix and other Cloud Foundry platforms. The following information is sent to a [Deployment Tracker](https://github.com/IBM-Bluemix/cf-deployment-tracker-service) service on each deployment:
-
-* Application Name (application_name)
-* Space ID (space_id)
-* Application Version (application_version)
-* Application URIs (application_uris)
-
-This data is collected from the VCAP_APPLICATION environment variable in IBM Bluemix and other Cloud Foundry platforms. This data is used by IBM to track metrics around deployments of sample applications to IBM Bluemix. Only deployments of sample applications that include code to ping the Deployment Tracker service will be tracked.
-
-### Disabling Deployment Tracking
-
-Deployment tracking can be disabled by removing `require("cf-deployment-tracker-client").track();` from the beginning of the `app.js` file.
-
 [bluemix-signup-url]: https://console.ng.bluemix.net/registration/
 [insights-twitter-url]: https://console.ng.bluemix.net/catalog/insights-for-twitter/
 [insights-weather-url]: https://console.ng.bluemix.net/catalog/weather-company-data-for-ibm-bluemix/
